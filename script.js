@@ -13,7 +13,7 @@ var typed = new Typed("#typing", {
         "PYTHON DEVELOPER",
         "PROBLEM SOLVER",
         "TECH ENTHUSIAST",
-        "BUIDING USEFUL TOOLS"
+        "BUILDING USEFUL TOOLS"
     ],
     typeSpeed: 50,
     backSpeed: 30,
@@ -78,4 +78,24 @@ max: 12,
 speed: 400,
 glare: true,
 "max-glare": 0.2
+});
+
+const skillSection = document.querySelector("#skills");
+const skillBars = document.querySelectorAll(".skill-progress");
+const animateSkills = () => {
+
+skillBars[0].style.width = "90%";   // Python
+skillBars[1].style.width = "80%";   // Git
+skillBars[2].style.width = "70%";   // Java
+skillBars[3].style.width = "75%";   // OpenCV
+};
+
+window.addEventListener("scroll", () => {
+
+const sectionTop = skillSection.getBoundingClientRect().top;
+
+if(sectionTop < window.innerHeight - 100){
+animateSkills();
+}
+
 });
