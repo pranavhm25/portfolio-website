@@ -7,3 +7,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+var typed = new Typed("#typing", {
+    strings: [
+        "Python Developer",
+        "Problem Solver",
+        "Tech Enthusiast",
+        "Building Useful Tools"
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+});
