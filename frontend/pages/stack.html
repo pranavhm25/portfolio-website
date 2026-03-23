@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Tech Stack — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/stack.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">Stack.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="stack">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--green)">What I work with</div>
+      <h1 class="section-title">My Tech <span class="grad-green-blue">Stack</span></h1>
+      <p class="section-sub">Tools and technologies I use to bring ideas to life — from frontend to backend to data.</p>
+    </div>
+
+    <div class="filter-tabs reveal d1">
+      <div class="tab active" onclick="filterStack('all',this)">All</div>
+      <div class="tab" onclick="filterStack('frontend',this)">Frontend</div>
+      <div class="tab" onclick="filterStack('backend',this)">Backend</div>
+      <div class="tab" onclick="filterStack('ml',this)">ML / AI</div>
+      <div class="tab" onclick="filterStack('tools',this)">Tools</div>
+    </div>
+
+    <div class="tech-grid reveal d2" id="techGrid">
+      <div class="tech-card" data-cat="frontend" data-color="rgba(97,218,251,.3)"><div class="tech-icon" style="background:rgba(97,218,251,.12)">⚛</div><div class="tech-name">React</div><div class="tech-level"><div class="tech-level-bar" data-w="85" style="background:linear-gradient(90deg,#61DAFB,var(--blue))"></div></div><div class="tech-tag">Frontend</div></div>
+      <div class="tech-card" data-cat="frontend" data-color="rgba(255,220,0,.3)"><div class="tech-icon" style="background:rgba(255,220,0,.1);font-size:20px;font-weight:700;color:#f7df1e;font-family:monospace">JS</div><div class="tech-name">JavaScript</div><div class="tech-level"><div class="tech-level-bar" data-w="82" style="background:linear-gradient(90deg,#f7df1e,var(--yellow))"></div></div><div class="tech-tag">Frontend</div></div>
+      <div class="tech-card" data-cat="frontend" data-color="rgba(56,182,255,.3)"><div class="tech-icon" style="background:rgba(56,182,255,.1);font-size:18px;font-weight:700;color:#38bcf8;font-family:monospace">TS</div><div class="tech-name">TypeScript</div><div class="tech-level"><div class="tech-level-bar" data-w="65" style="background:linear-gradient(90deg,#38bcf8,var(--blue))"></div></div><div class="tech-tag">Frontend</div></div>
+      <div class="tech-card" data-cat="frontend" data-color="rgba(255,111,216,.3)"><div class="tech-icon" style="background:rgba(255,111,216,.1)">🎨</div><div class="tech-name">Tailwind CSS</div><div class="tech-level"><div class="tech-level-bar" data-w="80" style="background:linear-gradient(90deg,var(--pink),#a855f7)"></div></div><div class="tech-tag">Frontend</div></div>
+      <div class="tech-card" data-cat="frontend" data-color="rgba(255,255,255,.2)"><div class="tech-icon" style="background:rgba(255,255,255,.06);font-size:20px;font-weight:800;color:#fff;font-family:monospace">N</div><div class="tech-name">Next.js</div><div class="tech-level"><div class="tech-level-bar" data-w="60" style="background:linear-gradient(90deg,#aaa,#fff)"></div></div><div class="tech-tag">Frontend</div></div>
+      <div class="tech-card" data-cat="backend" data-color="rgba(104,160,99,.3)"><div class="tech-icon" style="background:rgba(104,160,99,.12)">⬡</div><div class="tech-name">Node.js</div><div class="tech-level"><div class="tech-level-bar" data-w="80" style="background:linear-gradient(90deg,#68a063,var(--green))"></div></div><div class="tech-tag">Backend</div></div>
+      <div class="tech-card" data-cat="backend" data-color="rgba(250,204,21,.3)"><div class="tech-icon" style="background:rgba(250,204,21,.1)">🐍</div><div class="tech-name">Python</div><div class="tech-level"><div class="tech-level-bar" data-w="88" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tech-tag">Backend</div></div>
+      <div class="tech-card" data-cat="backend" data-color="rgba(255,111,216,.3)"><div class="tech-icon" style="background:rgba(255,111,216,.1);font-size:18px;font-weight:700;color:var(--pink);font-family:monospace">Ex</div><div class="tech-name">Express.js</div><div class="tech-level"><div class="tech-level-bar" data-w="78" style="background:linear-gradient(90deg,var(--pink),#a855f7)"></div></div><div class="tech-tag">Backend</div></div>
+      <div class="tech-card" data-cat="backend" data-color="rgba(74,222,128,.3)"><div class="tech-icon" style="background:rgba(74,222,128,.1)">🍃</div><div class="tech-name">MongoDB</div><div class="tech-level"><div class="tech-level-bar" data-w="75" style="background:linear-gradient(90deg,var(--green),#16a34a)"></div></div><div class="tech-tag">Backend</div></div>
+      <div class="tech-card" data-cat="backend" data-color="rgba(59,130,246,.3)"><div class="tech-icon" style="background:rgba(59,130,246,.1)">🐘</div><div class="tech-name">PostgreSQL</div><div class="tech-level"><div class="tech-level-bar" data-w="65" style="background:linear-gradient(90deg,var(--blue),#6366f1)"></div></div><div class="tech-tag">Backend</div></div>
+      <div class="tech-card" data-cat="ml" data-color="rgba(250,204,21,.3)"><div class="tech-icon" style="background:rgba(250,204,21,.1)">🤖</div><div class="tech-name">scikit-learn</div><div class="tech-level"><div class="tech-level-bar" data-w="55" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tech-tag">ML / AI</div></div>
+      <div class="tech-card" data-cat="ml" data-color="rgba(255,111,216,.3)"><div class="tech-icon" style="background:rgba(255,111,216,.1)">🧠</div><div class="tech-name">NumPy</div><div class="tech-level"><div class="tech-level-bar" data-w="70" style="background:linear-gradient(90deg,var(--pink),#a855f7)"></div></div><div class="tech-tag">ML / AI</div></div>
+      <div class="tech-card" data-cat="ml" data-color="rgba(74,222,128,.3)"><div class="tech-icon" style="background:rgba(74,222,128,.1)">🐼</div><div class="tech-name">Pandas</div><div class="tech-level"><div class="tech-level-bar" data-w="72" style="background:linear-gradient(90deg,var(--green),var(--blue))"></div></div><div class="tech-tag">ML / AI</div></div>
+      <div class="tech-card" data-cat="ml" data-color="rgba(250,204,21,.3)"><div class="tech-icon" style="background:rgba(250,204,21,.1)">📊</div><div class="tech-name">Matplotlib</div><div class="tech-level"><div class="tech-level-bar" data-w="60" style="background:linear-gradient(90deg,var(--yellow),var(--green))"></div></div><div class="tech-tag">ML / AI</div></div>
+      <div class="tech-card" data-cat="tools" data-color="rgba(255,111,216,.3)"><div class="tech-icon" style="background:rgba(255,111,216,.1)">🐙</div><div class="tech-name">Git & GitHub</div><div class="tech-level"><div class="tech-level-bar" data-w="85" style="background:linear-gradient(90deg,var(--pink),var(--orange))"></div></div><div class="tech-tag">Tools</div></div>
+      <div class="tech-card" data-cat="tools" data-color="rgba(59,130,246,.3)"><div class="tech-icon" style="background:rgba(59,130,246,.1)">🐳</div><div class="tech-name">Docker</div><div class="tech-level"><div class="tech-level-bar" data-w="50" style="background:linear-gradient(90deg,var(--blue),#6366f1)"></div></div><div class="tech-tag">Tools</div></div>
+      <div class="tech-card" data-cat="tools" data-color="rgba(74,222,128,.3)"><div class="tech-icon" style="background:rgba(74,222,128,.1)">⚡</div><div class="tech-name">VS Code</div><div class="tech-level"><div class="tech-level-bar" data-w="95" style="background:linear-gradient(90deg,var(--green),var(--blue))"></div></div><div class="tech-tag">Tools</div></div>
+      <div class="tech-card" data-cat="tools" data-color="rgba(250,204,21,.3)"><div class="tech-icon" style="background:rgba(250,204,21,.1)">🚀</div><div class="tech-name">Postman</div><div class="tech-level"><div class="tech-level-bar" data-w="80" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div><div class="tech-tag">Tools</div></div>
+    </div>
+
+    <div class="learning-banner reveal d3">
+      <div class="banner-left">
+        <div class="banner-label">🌱 On my learning radar</div>
+        <div class="banner-title">Always Expanding</div>
+        <div class="banner-sub">Actively diving deeper into ML and exploring new tools.</div>
+      </div>
+      <div class="banner-chips">
+        <div class="banner-chip" style="background:rgba(255,111,216,.08);border-color:rgba(255,111,216,.25);color:var(--pink)">🔥 TensorFlow</div>
+        <div class="banner-chip" style="background:rgba(250,204,21,.08);border-color:rgba(250,204,21,.25);color:var(--yellow)">⚡ PyTorch</div>
+        <div class="banner-chip" style="background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.25);color:var(--green)">☁ AWS</div>
+        <div class="banner-chip" style="background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.25);color:var(--blue)">🔷 GraphQL</div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal d4">
+      <a href="journey.html"  class="btn btn-ghost">← My Journey</a>
+      <a href="projects.html" class="btn btn-primary">Projects →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/stack.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>

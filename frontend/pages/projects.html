@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Projects — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">Projects.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="projects">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--pink)">What I've built</div>
+      <h1 class="section-title">Featured <span class="grad-pink-yellow">Projects</span></h1>
+      <p class="section-sub">A selection of real projects — built to solve actual problems, not just to fill a portfolio.</p>
+    </div>
+
+    <div class="projects-list">
+
+      <!-- Project 1 -->
+      <div class="project-card card-pink reveal">
+        <div class="project-num">01</div>
+        <div class="project-info">
+          <div class="project-badges">
+            <span class="p-badge" style="background:rgba(255,111,216,.08);border-color:rgba(255,111,216,.25);color:var(--pink)">🌐 Web App</span>
+            <span class="p-badge" style="background:rgba(250,204,21,.08);border-color:rgba(250,204,21,.2);color:var(--yellow)">⚡ Utility</span>
+          </div>
+          <h2 class="project-title">QR Toolkit</h2>
+          <p class="project-desc">A web-based utility for generating and scanning QR codes across multiple input types — URLs, phone numbers, Wi-Fi credentials, and plain text. Features real-time webcam-based scanning.</p>
+          <div class="tech-pills">
+            <div class="tech-pill">JavaScript</div><div class="tech-pill">HTML / CSS</div>
+            <div class="tech-pill">QR Libraries</div><div class="tech-pill">WebRTC</div>
+          </div>
+          <div class="project-links">
+            <a class="link-btn" style="background:rgba(255,111,216,.1);border-color:rgba(255,111,216,.3);color:var(--pink)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>Live Demo
+            </a>
+            <a class="link-btn" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.65)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="visual-qr">
+            <div class="qr-code"></div>
+            <div class="qr-inputs">
+              <div class="qr-input-row"><span>🔗</span>https://yoursite.com</div>
+              <div class="qr-input-row"><span>📞</span>Phone number</div>
+              <div class="qr-input-row"><span>📶</span>Wi-Fi credentials</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card card-blue reveal d1">
+        <div class="project-num">02</div>
+        <div class="project-visual" style="order:-1">
+          <div class="visual-grade">
+            <div class="grade-display">A+</div>
+            <div class="grade-bars">
+              <div class="grade-bar-row">Math<div class="grade-bar-track"><div class="grade-bar-fill" style="width:92%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>92</div>
+              <div class="grade-bar-row">Physics<div class="grade-bar-track"><div class="grade-bar-fill" style="width:87%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>87</div>
+              <div class="grade-bar-row">CS<div class="grade-bar-track"><div class="grade-bar-fill" style="width:96%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>96</div>
+              <div class="grade-bar-row">English<div class="grade-bar-track"><div class="grade-bar-fill" style="width:78%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>78</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-badges">
+            <span class="p-badge" style="background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.25);color:var(--blue)">📊 Calculator</span>
+            <span class="p-badge" style="background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.2);color:var(--green)">🎓 EdTech</span>
+          </div>
+          <h2 class="project-title">Student Grade Calculator</h2>
+          <p class="project-desc">Calculates a student's final grade from subject marks — automatically computing totals, averages, and assigning grades via predefined criteria. Reduces manual errors.</p>
+          <div class="tech-pills">
+            <div class="tech-pill">JavaScript</div><div class="tech-pill">HTML / CSS</div>
+            <div class="tech-pill">Conditional Logic</div><div class="tech-pill">Input Handling</div>
+          </div>
+          <div class="project-links">
+            <a class="link-btn" style="background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:var(--blue)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>Live Demo
+            </a>
+            <a class="link-btn" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.65)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card card-yellow reveal d2">
+        <div class="project-num">03</div>
+        <div class="project-info">
+          <div class="project-badges">
+            <span class="p-badge sih-badge">🏆 SIH 2025</span>
+            <span class="p-badge" style="background:rgba(249,115,22,.08);border-color:rgba(249,115,22,.25);color:var(--orange)">🔒 Security</span>
+            <span class="p-badge" style="background:rgba(250,204,21,.08);border-color:rgba(250,204,21,.2);color:var(--yellow)">🧠 ML / AI</span>
+          </div>
+          <h2 class="project-title">Fake Certificate Detector</h2>
+          <p class="project-desc">Built for Smart India Hackathon 2025 — identifies potentially forged certificates by analyzing documents for inconsistencies, verification markers, and authenticity patterns.</p>
+          <div class="tech-pills">
+            <div class="tech-pill">Python</div><div class="tech-pill">Document Analysis</div>
+            <div class="tech-pill">Pattern Detection</div><div class="tech-pill">ML Concepts</div>
+          </div>
+          <div class="project-links">
+            <a class="link-btn" style="background:rgba(250,204,21,.1);border-color:rgba(250,204,21,.3);color:var(--yellow)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>Live Demo
+            </a>
+            <a class="link-btn" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.65)" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="visual-cert">
+            <div class="cert-doc">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <div style="font-size:10px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:1px">CERTIFICATE</div>
+                <div class="cert-seal">🔏</div>
+              </div>
+              <div class="cert-line"></div><div class="cert-line short"></div>
+              <div class="cert-line"></div><div class="cert-line short" style="width:40%"></div><div class="cert-line"></div>
+            </div>
+            <div class="cert-status" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25)">
+              <div class="status-dot" style="background:var(--green)"></div>
+              <span style="font-size:12px;font-weight:600;color:var(--green)">Authentic — 97.3% confidence</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="padding:5px 12px;border-radius:100px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);font-size:11px;color:var(--orange);font-weight:600">⚠ Font mismatch</div>
+              <div style="padding:5px 12px;border-radius:100px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);font-size:11px;color:var(--green);font-weight:600">✓ Seal valid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live GitHub Repos -->
+    <div class="reveal" style="margin-top:80px">
+      <div class="section-label" style="color:var(--green)">From GitHub</div>
+      <h2 class="section-title" style="font-size:clamp(24px,3vw,40px)">Live <span class="grad-green-blue">Repositories</span></h2>
+    </div>
+    <div id="github-projects" class="github-grid reveal d1"></div>
+
+    <div class="page-nav reveal d4">
+      <a href="stack.html"   class="btn btn-ghost">← Tech Stack</a>
+      <a href="ml.html"      class="btn btn-primary">ML Journey →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/projects.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>

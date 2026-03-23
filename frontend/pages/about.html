@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>About — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">About.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="about">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--pink)">Get to know me</div>
+      <h1 class="section-title">About <span class="grad-yellow-green">Me</span></h1>
+    </div>
+
+    <div class="about-grid">
+      <!-- Left: Avatar -->
+      <div class="avatar-col">
+        <div class="avatar-card reveal-l">
+          <div class="avatar-art"><div class="avatar-initials">P</div></div>
+          <div class="avatar-tag">
+            <div class="t-title">Pranav</div>
+            <div class="t-sub">Engineering Student · India 🇮🇳</div>
+          </div>
+        </div>
+        <div class="stats-row reveal d1">
+          <div class="stat-card"><div class="stat-num">Full</div><div class="stat-label">Stack Developer</div></div>
+          <div class="stat-card"><div class="stat-num">ML</div><div class="stat-label">Currently Learning</div></div>
+          <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Problems to Solve</div></div>
+          <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">Goal: Get Hired 🎯</div></div>
+        </div>
+      </div>
+
+      <!-- Right: Bio -->
+      <div class="bio-col">
+        <p class="bio-text reveal">
+          Hey! I'm <strong>Pranav</strong>, an engineering student with a deep passion for building things
+          that actually work and matter. I specialize in <strong>full-stack web development</strong> — from
+          crafting responsive UIs to designing robust backends — and I'm currently diving deep into
+          <strong>machine learning</strong>.
+        </p>
+        <p class="bio-text reveal d1">
+          I love the whole journey — from a blank editor to a deployed, working product. Whether it's
+          a clean REST API, a slick React interface, or training my first ML model, I'm always
+          <strong>building, breaking, and learning</strong>.
+        </p>
+
+        <div class="bio-highlights reveal d2">
+          <div class="hl-pill hl-pink">🐍 Python</div>
+          <div class="hl-pill hl-blue">⚛ React</div>
+          <div class="hl-pill hl-green">⬡ Node.js</div>
+          <div class="hl-pill hl-yellow">🧠 ML / AI</div>
+          <div class="hl-pill hl-pink">🍃 MongoDB</div>
+          <div class="hl-pill hl-blue">🐘 PostgreSQL</div>
+          <div class="hl-pill hl-green">🐳 Docker</div>
+          <div class="hl-pill hl-yellow">☁ Cloud</div>
+        </div>
+
+        <div class="currently-box reveal d3">
+          <div class="currently-title">⚡ Currently</div>
+          <div class="currently-item">
+            <div class="ci-dot" style="background:var(--pink)"></div>
+            <div class="ci-text">Building full-stack web projects<span>React + Node.js + MongoDB</span></div>
+          </div>
+          <div class="currently-item">
+            <div class="ci-dot" style="background:var(--yellow)"></div>
+            <div class="ci-text">Learning Machine Learning<span>Python · scikit-learn · neural networks</span></div>
+          </div>
+          <div class="currently-item">
+            <div class="ci-dot" style="background:var(--green)"></div>
+            <div class="ci-text">Open to internships & developer roles<span>Looking for first industry experience</span></div>
+          </div>
+        </div>
+
+        <div class="fun-fact reveal d4">
+          <div class="fun-fact-icon">💡</div>
+          I believe the best way to learn something is to build something with it — so every new
+          concept I learn, I immediately try to put into a project.
+        </div>
+
+        <div class="page-nav reveal d4">
+          <a href="journey.html" class="btn btn-primary">My Journey →</a>
+          <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Journey — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/journey.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">Journey.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="timeline">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--blue)">My journey</div>
+      <h1 class="section-title">Experience & <span class="grad-blue-pink">Milestones</span></h1>
+      <p class="section-sub">A timeline of the key moments that shaped me as a developer.</p>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:var(--yellow);box-shadow:0 0 10px rgba(250,204,21,.4)"></div>
+        <div class="tl-card" data-hover="rgba(250,204,21,.3)">
+          <div class="tl-header">
+            <div class="tl-title">🏆 Smart India Hackathon 2025</div>
+            <div class="tl-date" style="background:rgba(250,204,21,.08);border-color:rgba(250,204,21,.25);color:var(--yellow)">2025</div>
+          </div>
+          <div class="tl-org" style="color:var(--yellow)">National Level Hackathon · Team Project</div>
+          <div class="tl-desc">Participated in SIH 2025 — one of India's largest hackathons. Built a Fake Certificate Detector that analyzes documents for forgery indicators using pattern detection and ML concepts.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Python</span><span class="tl-tag">ML Concepts</span>
+            <span class="tl-tag">Document Analysis</span><span class="tl-tag">Team Collaboration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d1">
+        <div class="tl-dot" style="border-color:var(--pink);box-shadow:0 0 10px rgba(255,111,216,.4)"></div>
+        <div class="tl-card" data-hover="rgba(255,111,216,.3)">
+          <div class="tl-header">
+            <div class="tl-title">🧠 Started Learning ML</div>
+            <div class="tl-date" style="background:rgba(255,111,216,.08);border-color:rgba(255,111,216,.25);color:var(--pink)">2024 – Present</div>
+          </div>
+          <div class="tl-org" style="color:var(--pink)">Self-Learning · Online Courses & Projects</div>
+          <div class="tl-desc">Began exploring Machine Learning through Python — studying core algorithms, data preprocessing, model training, and evaluation using scikit-learn, NumPy, and Pandas.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Python</span><span class="tl-tag">scikit-learn</span>
+            <span class="tl-tag">NumPy</span><span class="tl-tag">Pandas</span><span class="tl-tag">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d2">
+        <div class="tl-dot" style="border-color:var(--green);box-shadow:0 0 10px rgba(74,222,128,.4)"></div>
+        <div class="tl-card" data-hover="rgba(74,222,128,.3)">
+          <div class="tl-header">
+            <div class="tl-title">🌐 Full Stack Web Development</div>
+            <div class="tl-date" style="background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.25);color:var(--green)">2023 – Present</div>
+          </div>
+          <div class="tl-org" style="color:var(--green)">Personal Projects · Self-Taught</div>
+          <div class="tl-desc">Mastered the MERN stack by building real projects — REST APIs, full responsive frontends. Built QR Toolkit, Grade Calculator, and more web utilities along the way.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">React</span><span class="tl-tag">Node.js</span>
+            <span class="tl-tag">Express</span><span class="tl-tag">MongoDB</span><span class="tl-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal d3">
+        <div class="tl-dot" style="border-color:var(--blue);box-shadow:0 0 10px rgba(59,130,246,.4)"></div>
+        <div class="tl-card" data-hover="rgba(59,130,246,.3)">
+          <div class="tl-header">
+            <div class="tl-title">🎓 B.Tech Engineering</div>
+            <div class="tl-date" style="background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.25);color:var(--blue)">2022 – Present</div>
+          </div>
+          <div class="tl-org" style="color:var(--blue)">Engineering College · India</div>
+          <div class="tl-desc">Pursuing B.Tech in Engineering. Building strong foundations in computer science fundamentals, data structures, algorithms, and software engineering principles.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">DSA</span><span class="tl-tag">OOP</span>
+            <span class="tl-tag">DBMS</span><span class="tl-tag">OS</span><span class="tl-tag">Networks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="about.html"    class="btn btn-ghost">← About Me</a>
+      <a href="stack.html"    class="btn btn-primary">Tech Stack →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>

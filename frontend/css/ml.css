@@ -1,0 +1,23 @@
+#ml-journey{padding:100px 8vw 80px;position:relative;overflow:hidden;z-index:1;}
+#ml-journey::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(250,204,21,.07),transparent 70%);top:-80px;right:-80px;pointer-events:none;}
+.ml-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.ml-left{display:flex;flex-direction:column;gap:28px;}
+.ml-progress-item{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;transition:border-color .2s,transform .2s;cursor:none;}
+.ml-progress-item:hover{transform:translateY(-3px);}
+.ml-item-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.ml-item-title{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px;}
+.ml-item-pct{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;}
+.ml-bar-track{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+.ml-bar-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1);width:0%;}
+.ml-item-sub{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.ml-right{display:flex;flex-direction:column;gap:20px;}
+.ml-concept-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;transition:border-color .3s,transform .3s;}
+.ml-concept-card:hover{transform:translateX(6px);}
+.ml-concept-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.ml-concept-desc{font-size:13px;line-height:1.65;color:var(--muted);}
+.ml-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;margin-top:10px;}
+.status-dot{width:7px;height:7px;border-radius:50%;animation:pulse 1.5s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.page-nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:64px;}
+@media(max-width:900px){.ml-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){#ml-journey{padding:100px 6vw 60px;}}

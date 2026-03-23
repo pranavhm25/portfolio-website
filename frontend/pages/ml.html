@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ML Journey — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/ml.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">ML.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="ml-journey">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--yellow)">My ML path</div>
+      <h1 class="section-title">ML <span class="grad-yellow-orange">Learning Journey</span></h1>
+      <p class="section-sub">From zero to building models — documenting every step of my machine learning exploration.</p>
+    </div>
+
+    <div class="ml-grid">
+      <!-- Left: Progress bars -->
+      <div class="ml-left">
+        <div class="ml-progress-item reveal" data-hover="rgba(250,204,21,.3)">
+          <div class="ml-item-header"><div class="ml-item-title"><span>🐍</span>Python for ML</div><div class="ml-item-pct" style="color:var(--yellow)">90%</div></div>
+          <div class="ml-bar-track"><div class="ml-bar-fill" data-w="90" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div>
+          <div class="ml-item-sub">NumPy, Pandas, Matplotlib — comfortable with data wrangling, EDA, and visualization pipelines.</div>
+        </div>
+        <div class="ml-progress-item reveal d1" data-hover="rgba(255,111,216,.3)">
+          <div class="ml-item-header"><div class="ml-item-title"><span>🤖</span>Classical ML</div><div class="ml-item-pct" style="color:var(--pink)">65%</div></div>
+          <div class="ml-bar-track"><div class="ml-bar-fill" data-w="65" style="background:linear-gradient(90deg,var(--pink),#a855f7)"></div></div>
+          <div class="ml-item-sub">Regression, classification, clustering — using scikit-learn for training and evaluating models.</div>
+        </div>
+        <div class="ml-progress-item reveal d2" data-hover="rgba(74,222,128,.3)">
+          <div class="ml-item-header"><div class="ml-item-title"><span>🧠</span>Deep Learning</div><div class="ml-item-pct" style="color:var(--green)">25%</div></div>
+          <div class="ml-bar-track"><div class="ml-bar-fill" data-w="25" style="background:linear-gradient(90deg,var(--green),var(--blue))"></div></div>
+          <div class="ml-item-sub">Just getting started — understanding backpropagation and exploring TensorFlow basics.</div>
+        </div>
+        <div class="ml-progress-item reveal d3" data-hover="rgba(59,130,246,.3)">
+          <div class="ml-item-header"><div class="ml-item-title"><span>📊</span>Data Analysis</div><div class="ml-item-pct" style="color:var(--blue)">75%</div></div>
+          <div class="ml-bar-track"><div class="ml-bar-fill" data-w="75" style="background:linear-gradient(90deg,var(--blue),#6366f1)"></div></div>
+          <div class="ml-item-sub">Comfortable with EDA, feature engineering, handling missing data, and drawing insights.</div>
+        </div>
+      </div>
+
+      <!-- Right: Concept cards -->
+      <div class="ml-right">
+        <div class="ml-concept-card reveal-r" data-hover="rgba(250,204,21,.3)">
+          <div class="ml-concept-title"><span>📐</span>Supervised Learning</div>
+          <div class="ml-concept-desc">Linear/Logistic Regression, Decision Trees, Random Forests, SVMs applied to real datasets.</div>
+          <div class="ml-status" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:var(--green)"><div class="status-dot" style="background:var(--green)"></div>Comfortable</div>
+        </div>
+        <div class="ml-concept-card reveal-r d1" data-hover="rgba(255,111,216,.3)">
+          <div class="ml-concept-title"><span>🔍</span>Unsupervised Learning</div>
+          <div class="ml-concept-desc">K-Means Clustering, PCA for dimensionality reduction — finding hidden patterns in data.</div>
+          <div class="ml-status" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:var(--yellow)"><div class="status-dot" style="background:var(--yellow)"></div>Learning</div>
+        </div>
+        <div class="ml-concept-card reveal-r d2" data-hover="rgba(59,130,246,.3)">
+          <div class="ml-concept-title"><span>⚡</span>Model Evaluation</div>
+          <div class="ml-concept-desc">Accuracy, precision, recall, F1-score, confusion matrices, cross-validation strategies.</div>
+          <div class="ml-status" style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:var(--green)"><div class="status-dot" style="background:var(--green)"></div>Comfortable</div>
+        </div>
+        <div class="ml-concept-card reveal-r d3" data-hover="rgba(249,115,22,.3)">
+          <div class="ml-concept-title"><span>🔥</span>Neural Networks</div>
+          <div class="ml-concept-desc">Perceptrons, activation functions, forward/backpropagation. Starting TensorFlow and PyTorch.</div>
+          <div class="ml-status" style="background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25);color:var(--orange)"><div class="status-dot" style="background:var(--orange)"></div>Exploring</div>
+        </div>
+        <div class="ml-concept-card reveal-r d4" style="background:linear-gradient(135deg,rgba(250,204,21,.06),rgba(249,115,22,.06))" data-hover="rgba(250,204,21,.3)">
+          <div class="ml-concept-title"><span>🎯</span>Next Goal</div>
+          <div class="ml-concept-desc">Build a complete ML project end-to-end — from data collection to deployed model — combining web dev with ML.</div>
+          <div class="ml-status" style="background:rgba(255,111,216,.08);border:1px solid rgba(255,111,216,.25);color:var(--pink)"><div class="status-dot" style="background:var(--pink)"></div>In progress</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="projects.html" class="btn btn-ghost">← Projects</a>
+      <a href="contact.html"  class="btn btn-primary">Contact Me →</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/ml.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>

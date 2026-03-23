@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Pranav — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">Pranav.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Initializing...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/journey.html">Journey</a></li>
+      <li><a href="pages/stack.html">Stack</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/ml.html">ML</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html"          onclick="closeMenu()">Home</a>
+    <a href="pages/about.html"    onclick="closeMenu()">About</a>
+    <a href="pages/journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="pages/stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="pages/projects.html" onclick="closeMenu()">Projects</a>
+    <a href="pages/ml.html"       onclick="closeMenu()">ML</a>
+    <a href="pages/contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        Open to opportunities · B.Tech Engineering Student
+        <span id="visitor-badge"></span>
+      </div>
+
+      <div class="hero-name-wrap">
+        <div class="hero-name-echo">Pranav</div>
+        <h1 class="hero-name">Hi, I'm<br><span class="hero-name-gradient">Pranav</span></h1>
+      </div>
+
+      <div class="hero-typewriter">
+        <span class="tw-text" id="tw"></span><span class="tw-cursor"></span>
+      </div>
+
+      <p class="hero-desc">
+        Engineering student passionate about building full-stack web apps and exploring
+        machine learning. I love turning ideas into real, working products.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="pages/projects.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+          View Projects
+        </a>
+        <a class="btn btn-ghost" href="pages/contact.html">Say Hello 👋</a>
+      </div>
+
+      <!-- Page navigation pills -->
+      <div class="page-nav">
+        <a href="pages/about.html"    class="page-pill">About Me →</a>
+        <a href="pages/journey.html"  class="page-pill">My Journey →</a>
+        <a href="pages/stack.html"    class="page-pill">Tech Stack →</a>
+        <a href="pages/ml.html"       class="page-pill">ML Path →</a>
+      </div>
+    </div>
+
+    <div class="hero-chips">
+      <div class="chip"><div class="chip-icon" style="background:rgba(97,218,251,.15);color:#61DAFB">⚛</div>React</div>
+      <div class="chip"><div class="chip-icon" style="background:rgba(104,160,99,.15);color:#68a063">⬡</div>Node.js</div>
+      <div class="chip"><div class="chip-icon" style="background:rgba(250,204,21,.15);color:#facc15">🐍</div>Python</div>
+      <div class="chip"><div class="chip-icon" style="background:rgba(255,111,216,.15);color:#ff6fd8">🧠</div>ML / AI</div>
+      <div class="chip"><div class="chip-icon" style="background:rgba(74,222,128,.15);color:#4ade80">🍃</div>MongoDB</div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

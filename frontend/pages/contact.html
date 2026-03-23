@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact — Pranav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="progress-bar"></div>
+
+  <div id="loader">
+    <div class="loader-name">Contact.</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-text" id="loaderText">Loading...</div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">P.</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ml.html">ML</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a onclick="downloadResume()" class="nav-cta" style="cursor:none">Resume ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html"    onclick="closeMenu()">About</a>
+    <a href="journey.html"  onclick="closeMenu()">Journey</a>
+    <a href="stack.html"    onclick="closeMenu()">Stack</a>
+    <a href="projects.html" onclick="closeMenu()">Projects</a>
+    <a href="ml.html"       onclick="closeMenu()">ML</a>
+    <a href="contact.html"  onclick="closeMenu()">Contact</a>
+    <a onclick="downloadResume();closeMenu()">Resume ↗</a>
+  </div>
+
+  <main id="contact">
+    <div class="reveal">
+      <div class="section-label" style="color:var(--blue)">Get in touch</div>
+      <h1 class="section-title">Let's <span class="grad-blue-pink">Connect</span></h1>
+      <p class="section-sub">Whether you have a project, an opportunity, or just want to say hi — my inbox is always open.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left -->
+      <div class="contact-left">
+        <div class="availability-badge reveal">
+          <div class="avail-dot"></div>
+          <div class="avail-text">Available for internships & roles</div>
+        </div>
+        <div class="contact-tagline reveal d1">Got an idea or<br>an opportunity? <span>Let's talk.</span></div>
+        <p class="contact-body reveal d2">I'm Pranav — a full-stack developer and ML enthusiast looking for my first industry role. If you think I'd be a good fit, I'd love to hear from you.</p>
+
+        <div class="direct-links reveal d3">
+          <a class="direct-link" href="mailto:pranav@email.com" data-hover="rgba(255,111,216,.3)">
+            <div class="dl-icon" style="background:rgba(255,111,216,.1)">📧</div>
+            <div class="dl-info"><div class="dl-label">Email</div><div class="dl-value">pranav@email.com</div></div>
+            <div class="dl-arrow">→</div>
+          </a>
+          <a class="direct-link" href="#" data-hover="rgba(59,130,246,.3)">
+            <div class="dl-icon" style="background:rgba(59,130,246,.1)">💼</div>
+            <div class="dl-info"><div class="dl-label">LinkedIn</div><div class="dl-value">linkedin.com/in/pranav</div></div>
+            <div class="dl-arrow">→</div>
+          </a>
+          <a class="direct-link" href="#" data-hover="rgba(255,255,255,.2)">
+            <div class="dl-icon" style="background:rgba(255,255,255,.06)">🐙</div>
+            <div class="dl-info"><div class="dl-label">GitHub</div><div class="dl-value">github.com/pranav</div></div>
+            <div class="dl-arrow">→</div>
+          </a>
+        </div>
+
+        <div class="social-row reveal d4">
+          <a class="social-btn" href="#">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+          </a>
+          <a class="social-btn" href="#">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub
+          </a>
+          <a class="social-btn" href="#">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>Twitter
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form reveal-r">
+        <div id="formContent">
+          <div class="form-title">Send a Message</div>
+          <div class="form-sub">I usually reply within 24 hours ⚡</div>
+          <div class="form-row">
+            <div class="field"><label>Your Name</label><input type="text" placeholder="Jane Smith" id="fname"></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="jane@company.com" id="femail"></div>
+          </div>
+          <div class="field">
+            <label>Subject</label>
+            <select id="fsubject">
+              <option value="" disabled selected>What's this about?</option>
+              <option>Job Opportunity</option>
+              <option>Internship Offer</option>
+              <option>Project Collaboration</option>
+              <option>Just saying hi!</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label>Message</label><textarea placeholder="Hey Pranav, I came across your portfolio and..." id="fmessage"></textarea></div>
+          <button class="submit-btn" onclick="handleSubmit()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Send Message
+          </button>
+        </div>
+        <div class="success-msg" id="successMsg">
+          <div class="success-icon">✉️</div>
+          <div class="success-title">Message Sent!</div>
+          <div class="success-sub">Thanks for reaching out. I'll reply within 24 hours.</div>
+          <button onclick="resetForm()" class="reset-btn">Send another →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">P.</div>
+    <div class="footer-copy">Built with 💙 by <span>Pranav</span> · 2025</div>
+    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+      Back to top
+    </button>
+  </footer>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/contact.js"></script>
+  <script>
+    function downloadResume() { window.open(`${API}/resume/download`, "_blank"); }
+  </script>
+</body>
+</html>
